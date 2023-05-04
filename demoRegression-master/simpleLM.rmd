@@ -27,7 +27,6 @@ abline(simp)
 summary.lm(simp)
 ```
 
-
 ```{r}
 simp <- lm(LENGTH~AGE,data=bears)
 plot(LENGTH~AGE,data=bears)
@@ -43,8 +42,8 @@ summary.lm(simp)
 ```
 
 ```{r}
-simp <- lm(LENGTH~WEIGHT,data=bears)
-plot(LENGTH~WEIGHT,data=bears)
+simp <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
@@ -56,6 +55,20 @@ abline(simp)
 summary.lm(simp)
 ```
 
+```{r}
+simp <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+## now predict the length of a bear who had a neck of 17, 22 and 26
+
+```{r}
+hew <- data.frame(NECK=c(17,22,26))
+predict(simp,new)
+predict(simp,new,se.fit=TRUE)
+```
 
 
 ## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
