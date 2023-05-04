@@ -62,14 +62,8 @@ abline(simp)
 summary.lm(simp)
 ```
 
-## now predict the length of a bear who had a neck of 17, 22 and 26
-
-```{r}
-hew <- data.frame(NECK=c(17,22,26))
-predict(simp,new)
-predict(simp,new,se.fit=TRUE)
-```
-
-
 ## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
+
+Based off the RSE (residual standard error), the best model that can predict length with the best quality is "head length" which has the lowest RSE of 4.35. The second best model is given to the "chest" where RSE is 4.939. The next model is "neck" where RSE is 5.376. The following model is "weight" with RSE at 5.376. The fith best model comes to "head width" where RSE is 7.32. The worst and final model is "age" where RSE is the highest at 7.511.
+
 
